@@ -71,6 +71,7 @@ public class Dice {
         Random random = new Random();
         int r = random.nextInt(4);
         int d = random.nextInt(4);
+        int r2 = random.nextInt(4);
 
         for(int i =0;i<r;i++){
 
@@ -81,6 +82,12 @@ public class Dice {
         for(int i =0;i<d;i++){
 
             rotateDown();
+
+        }
+
+        for(int i =0;i<r2;i++){
+
+            rotateRight();
 
         }
 
