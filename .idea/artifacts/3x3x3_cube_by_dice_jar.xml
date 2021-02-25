@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="3x3x3_cube_by_dice:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/3x3x3_cube_by_dice_jar</output-path>
-    <root id="archive" name="3x3x3_cube_by_dice.jar">
-      <element id="module-output" name="3x3x3_cube_by_dice" />
-    </root>
-  </artifact>
-</component>
