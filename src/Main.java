@@ -28,7 +28,7 @@ public class Main {
                 if(res[i]!=0){
                     goods++;
                     for (int j = i+1;j<6;j++){
-                        if(res[j]!=0){
+                        if(res[j]==res[i]){
                             goods--;
                             two_goods++;
                         }
