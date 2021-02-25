@@ -28,11 +28,17 @@ public class Cube {
 
     public void shuffle(){
 
-        for (Dice[][] block: dices) {
-            for (Dice[] line : block) {
-                for (Dice dice : line) {
-                    dice.shuffle();
-                }
+        int last = this.wight-1;
+
+        for (int i =0;i<wight;i++){
+            for (int j =0;j<wight;j++){
+
+                dices[0][i][j].shuffle();
+                dices[last][i][j].shuffle();
+                dices[i][0][j].shuffle();
+                dices[i][last][j].shuffle();
+                dices[i][j][0].shuffle();
+                dices[i][j][last].shuffle();
             }
         }
     }
