@@ -2,13 +2,15 @@ public class Main {
 
     public static void main(String[] args){
 
-        if(args.length!=2){
-            System.out.println("Usage: wight number_of_iterations\n");
-            System.exit(0);
+        int wight = 3;
+        long N = 1000000;
+        if(args.length>0){
+
+            wight = Integer.parseInt(args[0]);
+            N = Long.parseLong(args[1]);
         }
 
-        int wight = Integer.parseInt(args[0]);
-        long N = Long.parseLong(args[1]);
+
         System.out.println("Parameters:\n\twight = "+wight+"\n\titerations: = "+N);
         long P = N;
 

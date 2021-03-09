@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -9,6 +10,8 @@ public class Dice {
     private int right;
     private int front;
     private int back;
+
+    private final ArrayList<Integer> nums = new ArrayList<>();
 
     int getUp(){
         return up;
@@ -36,6 +39,26 @@ public class Dice {
 
     public Dice(){
 
+        front = 1;
+        back = 6;
+
+        up = 5;
+        down = 2;
+
+        left = 4;
+        right = 3;
+
+        pullNums();
+    }
+
+    private void pullNums(){
+        nums.clear();
+        for(int i =1;i<=6;i++){
+            nums.add(i);
+        }
+    }
+
+    private void reset(){
         front = 1;
         back = 6;
 
@@ -97,10 +120,10 @@ public class Dice {
     }
 
     public void shuffle(){
-
+        reset();
         Random random = new Random();
         int front = random.nextInt(6)+1;
-        int red = random.nextInt(4);
+
         switch (front){
             case 1:
                 break;
@@ -115,6 +138,7 @@ public class Dice {
                 break;
             case 5:
                 rotateDown();
+                break;
             case 6:
                 rotateDown();
                 rotateDown();
@@ -122,31 +146,19 @@ public class Dice {
                 
         }
 
-        for (int i =0;i<red;i++){
+        ArrayList<Integer> local_nums = new ArrayList<>(nums);
+
+        local_nums.remove((Integer) this.front);
+        local_nums.remove((Integer) this.back);
+
+
+
+        int up = local_nums.get(random.nextInt(4));
+
+        while (this.up!=up){
             rotateRed();
         }
 
-//        int r = random.nextInt(4);
-//        int d = random.nextInt(4);
-//        int r2 = random.nextInt(4);
-//
-//        for(int i =0;i<r;i++){
-//
-//            rotateRight();
-//
-//        }
-//
-//        for(int i =0;i<d;i++){
-//
-//            rotateDown();
-//
-//        }
-//
-//        for(int i =0;i<r2;i++){
-//
-//            rotateRight();
-//
-//        }
 
     }
 
